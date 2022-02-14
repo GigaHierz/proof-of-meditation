@@ -1,1 +1,1 @@
-# proof-of-work
+# proof-of-meditation
