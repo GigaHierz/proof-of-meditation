@@ -17,5 +17,10 @@ OR FEATURE: when the user signs up, they will get an empty / blank NFT. Which wi
 
 - do we use the data of the whole day?
 - or does the user after the meditation session puts in their time frame where they mediated and then we check the data from that timeframe? - we need timezone shit for that.
+- also if we do the whleday, do we use schwellwertE?
+
 - doe we need an artist and do we want Miriam?
 - how do the user provide their fitbit data to us ? do they have to login through fitbit?
+- do we need marketing or a community?
+
+- questions: how do i save logindata on the blkcchain? encrypted.
