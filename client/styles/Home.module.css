@@ -8,28 +8,13 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-}
-
-.footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+  font-size: 1.5rem;
 }
 
 .title a {
-  color: #0070f3;
+  color: #eeee;
   text-decoration: none;
 }
 
@@ -57,7 +42,7 @@
 }
 
 .code {
-  background: #fafafa;
+  background: #222222;
   border-radius: 5px;
   padding: 0.75rem;
   font-size: 1.1rem;
