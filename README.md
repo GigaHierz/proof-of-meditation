@@ -1,6 +1,6 @@
 # Proof of Meditation
 
-This app is beeing built to incentivize people to take more care of their health and emotional wellbeeing through meditation.
+This app is being built to incentivize people to take more care of their health and emotional wellbeing through meditation.
 The user will use their fitbit data to prove that they are doing the meditation.
 
 The business model will looks like this:
@@ -15,8 +15,7 @@ OR FEATURE: when the user signs up, they will get an empty / blank NFT. Which wi
 
 - open questions??
 
-- do we use the data of the whole day?
-- or does the user after the meditation session puts in their time frame where they mediated and then we check the data from that timeframe? - we need timezone shit for that.
+- or does the user after the meditation session puts in their time frame where they mediated and then we check the data from that timeframe? - we need timezone shit for that. Or not? anyways start and stop button.
 - also if we do the whleday, do we use schwellwertE?
 
 - doe we need an artist and do we want Miriam?
