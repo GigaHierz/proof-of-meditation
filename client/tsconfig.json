@@ -15,6 +15,13 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "../nextjs-redux-starter/pages/list.tsx",
+    "../nextjs-redux-starter/pages/signup.tsx",
+    "../nextjs-redux-starter/pages/tracking.tsx"
+  ],
   "exclude": ["node_modules"]
 }

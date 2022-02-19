@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
-import Image from "next/image";
 import Layout from "../components/Layout";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Home.module.scss";
 
 const Home: NextPage = () => {
   function getLayout(page: any) {

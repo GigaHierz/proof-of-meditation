@@ -1,0 +1,23 @@
+.page {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.main {
+  display: flex;
+  height: calc(100vh - 64px);
+  background-color: #222222;
+}
+
+.main > section {
+  padding: 32px;
+}
+
+.left,
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}

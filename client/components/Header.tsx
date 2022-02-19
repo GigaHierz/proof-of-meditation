@@ -1,6 +1,6 @@
 import Head from "next/head";
-import styles from "../styles/Header.module.css";
-import Sidebar from "./Sidebar";
+import styles from "../styles/Header.module.scss";
+import Sidebar from "./Menu";
 
 export default function Header({ children }: { children: any }) {
   return (

@@ -1,15 +1,37 @@
 import Head from "next/head";
-import styles from "../styles/Layout.module.css";
-import Sidebar from "./Sidebar";
+import styles from "../styles/Layout.module.scss";
+import Menu from "./Menu";
 
 export default function Layout({ children }: { children: any }) {
   return (
     <>
-      <Sidebar></Sidebar>
       <Head>
-        <title>Layouts Example</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        ></link>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Nunito+Sans:wght@200&display=swap"
+          rel="stylesheet"
+        ></link>
+        <title>Proof of Meditation</title>
       </Head>
-      <main className={styles.main}>{children}</main>
+      <div className={styles.page}>
+        <div className={styles.left}>
+          <img
+            width="50%"
+            height="90%"
+            src="../assets/ocean.jpeg"
+            alt="calm ocean"
+          />
+        </div>
+        <div className={styles.right}>
+          <Menu></Menu>
+          <main className={styles.main}>{children}</main>
+        </div>
+      </div>
     </>
   );
 }
