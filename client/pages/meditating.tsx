@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { getFitbitData } from '../services/fitbitService'
+// import { getFitbitData } from '../services/fitbitService'
 import styles from '../styles/Meditating.module.scss'
 import Link from 'next/link'
 
@@ -26,33 +26,33 @@ function MeditatingPage () {
       setStatus('Meditation was ended. Great Job')
     }
   }
-  const mint = () => {
-    console.log(
-      Number(stopState?.replace(':', '')) - Number(startState?.replace(':', ''))
-    )
-    console.log(
-      Number(stopState?.replace(':', '')) - Number(startState?.replace(':', ''))
-    )
-    if (
-      startState &&
-      stopState &&
-      Number(stopState?.replace(':', '')) -
-        Number(startState?.replace(':', '')) >
-        1
-    ) {
-      getFitbitData(startState, stopState).then((colorArray: string[]) => {
-        console.log(colorArray)
-        // const container = document.getElementById('mycanvas')
-        // container.appendChild(canvas)
-      })
-    } else {
-      setStatus(
-        'sorry, this was to short. You will get an NFT if you meditated longer than 5 minutes'
-      )
-    }
-    setStartState(undefined)
-    setStopState(undefined)
-  }
+  // const mint = () => {
+  //   console.log(
+  //     Number(stopState?.replace(':', '')) - Number(startState?.replace(':', ''))
+  //   )
+  //   console.log(
+  //     Number(stopState?.replace(':', '')) - Number(startState?.replace(':', ''))
+  //   )
+  //   if (
+  //     startState &&
+  //     stopState &&
+  //     Number(stopState?.replace(':', '')) -
+  //       Number(startState?.replace(':', '')) >
+  //       1
+  //   ) {
+  //     getFitbitData(startState, stopState).then((colorArray: string[]) => {
+  //       console.log(colorArray)
+  //       // const container = document.getElementById('mycanvas')
+  //       // container.appendChild(canvas)
+  //     })
+  //   } else {
+  //     setStatus(
+  //       'sorry, this was to short. You will get an NFT if you meditated longer than 5 minutes'
+  //     )
+  //   }
+  //   setStartState(undefined)
+  //   setStopState(undefined)
+  // }
 
   const showPixelArt = () => {
     setShowart(true)

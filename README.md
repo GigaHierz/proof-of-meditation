@@ -1,5 +1,7 @@
 # Proof of Meditation
 
+Unfortunatley the app is not loading very well where we deployed it. so if you want to start it locally, just follow the instructions in the README.md file in the client folder.
+
 Proof of Meditation is an app that incentivizes you to meditate and rewards you for your effort.
 
 ## Problem
