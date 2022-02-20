@@ -31,7 +31,7 @@ const convertHexArray = (activity: HeartRate[]): any => {
 
 const toHex = (
   num: number,
-  hexString = '0123456789ABCDEF',
+  hexString = 'EF0123456789ABCD',
   hex = ''
 ): string | boolean => {
   if (hexString.length !== 16) {
@@ -46,7 +46,7 @@ const toHex = (
       `${hexString[num % 16]}${hex}`
     )
   }
-  return '#' + hex + hex + hex
+  return '#' + '00' + '0f' + hex
 }
 
 const getAverage = (heartRateArray: number[]) => {
