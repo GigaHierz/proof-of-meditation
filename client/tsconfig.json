@@ -21,7 +21,8 @@
     "**/*.tsx",
     "../nextjs-redux-starter/pages/list.tsx",
     "../nextjs-redux-starter/pages/signup.tsx",
-    "../nextjs-redux-starter/pages/tracking.tsx"
+    "../nextjs-redux-starter/pages/tracking.tsx",
+    "components/Canvas.js"
   ],
   "exclude": ["node_modules"]
 }
