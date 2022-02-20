@@ -1,87 +1,99 @@
-import HeartRate from "../models/fitbit";
+import HeartRate from '../models/fitbit'
 
-const data = require("../assets/data.json");
+const data = require('../assets/data.json')
 
-const noOfPixel = 24 * 24;
+const noOfPixel = 24 * 24
 
-export const getNft = async (
+export const getFitbitData = async (
   startTime: string,
   stopTime: string
-): Promise<string> => {
-  return await getFitBitData(startTime, stopTime).then((data) => {
-    console.log(data);
+): Promise<string[]> => {
+  return await getData(startTime, stopTime).then(data => {
     if (data && data.length > noOfPixel / 2) {
-      return createNft(data);
+      return convertHexArray(data)
     } else {
-      return "Mediation was to short";
+      return 'Meditation was to short'
     }
-  });
-};
+  })
+}
 
-const getFitBitData = async (
+const getData = async (
   startTime: string,
   stopTime: string
 ): Promise<HeartRate[]> => {
-  return data["activities-heart-intraday"].data;
-};
-const createNft = (activity: HeartRate[]): any => {
-  const heartRateArray = activity.map((x) => x.value);
-  return getAverage(heartRateArray)?.map((number) => toHex(number));
-};
+  return await data['activities-heart-intraday'].dataset
+}
+const convertHexArray = (activity: HeartRate[]): any => {
+  const heartRateArray = activity.map(x => x.value)
+
+  return getAverage(heartRateArray)?.map(number => toHex(number))
+}
 
 const toHex = (
   num: number,
-  hexString = "0123456789ABCDEF",
-  hex = ""
+  hexString = '0123456789ABCDEF',
+  hex = ''
 ): string | boolean => {
   if (hexString.length !== 16) {
-    return false;
+    return false
   }
-  num = Math.abs(num);
-  if (num && typeof num === "number") {
+  num = Math.abs(num)
+  if (num && typeof num === 'number') {
     //recursively append the remainder to hex and divide num by 16
     return toHex(
       Math.floor(num / 16),
       hexString,
       `${hexString[num % 16]}${hex}`
-    );
+    )
   }
-  return hex;
-};
+  return '#' + hex + hex + hex
+}
 
 const getAverage = (heartRateArray: number[]) => {
+  console.log(heartRateArray)
+
   if (heartRateArray.length > noOfPixel) {
-    return shortenArray(heartRateArray, noOfPixel);
+    return shortenArray(heartRateArray, noOfPixel)
   }
   if (heartRateArray.length < noOfPixel) {
     return shortenArray(
-      heartRateArray.flatMap((i) => [i, i]),
+      heartRateArray.flatMap(i => [i, i]),
       noOfPixel
-    );
+    )
   }
-};
+}
 
 const shortenArray = (heartRateArray: number[], noOfPixel: number) => {
-  const mod = heartRateArray.length % noOfPixel;
-  const parts = heartRateArray.length - mod / noOfPixel;
-  heartRateArray = [...heartRateArray.slice(0, heartRateArray.length - mod)];
-  let result: number[] = [];
+  const mod = heartRateArray.length % noOfPixel
+  console.log(mod)
 
-  for (let i = 0; i < heartRateArray.length; i += parts) {
-    let tempArray;
-    tempArray = heartRateArray.slice(i, i + parts);
-    console.log(tempArray);
-    result = [...result, reducer(tempArray, parts)];
-  }
+  const parts = heartRateArray.length / noOfPixel
+  console.log(parts)
 
-  return result;
-};
+  heartRateArray = [...heartRateArray.slice(0, heartRateArray.length - mod)]
+  let result: number[] = []
+
+  // for (let i = 0; i < heartRateArray.length; i += parts) {
+  //   let tempArray = []
+  //   tempArray = heartRateArray.slice(i, i + parts)
+  //   console.log(tempArray)
+  //   result = [...result, reducer(tempArray, parts)]
+  // }
+
+  result = [...heartRateArray]
+
+  console.log(result)
+
+  return result
+}
 
 const reducer = (array: number[], parts: number) => {
-  const initialValue = 0;
+  const initialValue = 0
   const sumWithInitial = array.reduce(
     (previousValue, currentValue) => previousValue + currentValue,
     initialValue
-  );
-  return sumWithInitial / parts;
-};
+  )
+  console.log(sumWithInitial / parts)
+
+  return sumWithInitial / parts
+}

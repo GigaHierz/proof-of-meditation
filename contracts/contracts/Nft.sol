@@ -11,16 +11,44 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 contract Nft is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
     using Counters for Counters.Counter;
 
-    mapping(uint256 => address) _user;
+    mapping(uint256 => address) _tokenToUser;
+    mapping(address => uint256) _dateToUser;
     Counters.Counter private _tokenIdCounter;
 
     constructor() ERC721("POMDaily", "POMD") {}
 
-    function safeMint(address to, string memory uri) public onlyOwner {
+    function mint(
+        address to,
+        string memory _uri,
+        uint256 _date
+    ) public {
+        _dateToUser[to] = _date;
+        safeMint((to), _uri);
+    }
+
+    function safeMint(address to, string memory uri) internal onlyOwner {
         uint256 tokenId = _tokenIdCounter.current();
         _tokenIdCounter.increment();
         _safeMint(to, tokenId);
         _setTokenURI(tokenId, uri);
+    }
+
+    function tokensOfOwner(address _owner)
+        public
+        view
+        returns (uint256[] memory)
+    {
+        uint256 tokenCount = balanceOf(_owner);
+        uint256[] memory tokenIds = new uint256[](tokenCount);
+        // string[] memory userTokens = new string[](tokenCount);
+
+        for (uint256 i = 0; i < tokenCount; i++) {
+            tokenIds[i] = tokenOfOwnerByIndex(_owner, i);
+            // if(tokensId[i]  == i){
+            //    userTokens[i] = tokensList[i];
+            // }
+        }
+        return tokenIds;
     }
 
     // The following functions are overrides required by Solidity.

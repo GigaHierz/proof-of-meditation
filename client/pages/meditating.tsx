@@ -1,5 +1,7 @@
 import { useState } from 'react'
-import { getNft } from '../services/fitbitService'
+import { getFitbitData } from '../services/fitbitService'
+import { createPixelArt } from '../services/imageService'
+import styles from '../styles/Meditating.module.scss'
 
 function MeditatingPage () {
   const [startState, setStartState] = useState<string>()
@@ -11,6 +13,8 @@ function MeditatingPage () {
       console.log('start')
 
       setStartState(`${new Date().getHours()}:${new Date().getMinutes()}`)
+      setStopState(undefined)
+      setStatus('Meditation is in Progress')
     }
   }
   const stop = () => {
@@ -18,6 +22,7 @@ function MeditatingPage () {
       console.log('stop')
 
       setStopState(`${new Date().getHours()}:${new Date().getMinutes()}`)
+      setStatus('Meditation was ended. Great Job')
     }
   }
   const mint = () => {
@@ -34,10 +39,11 @@ function MeditatingPage () {
         Number(startState?.replace(':', '')) >
         1
     ) {
-      getNft(startState, stopState).then((uri: string) => {
-        console.log(uri)
-
-        // contract.mint(uri, { value: gasfee });
+      getFitbitData(startState, stopState).then((colorArray: string[]) => {
+        console.log(colorArray)
+        // const canvas = createPixelArt(colorArray)
+        // const container = document.getElementById('mycanvas')
+        // container.appendChild(canvas)
       })
     } else {
       setStatus(
@@ -49,22 +55,33 @@ function MeditatingPage () {
   }
 
   return (
-    <div className='content'>
+    <div className={styles.content}>
       {' '}
-      <button disabled={startState !== undefined} onClick={start}>
-        Start Meditation
+      <button
+        className={styles.button}
+        disabled={startState !== undefined}
+        onClick={start}
+      >
+        start
       </button>
       <button
+        className={styles.button}
         disabled={stopState !== undefined && startState === undefined}
         onClick={stop}
       >
-        End Meditation
+        stop
       </button>
-      <span className='status'>{status}</span>
-      <button disabled={!startState || !stopState} onClick={mint}>
-        Mint
+      <span id='mycanvas' className={styles.status}>
+        {status}
+      </span>
+      <button
+        className={styles.button}
+        disabled={!startState || !stopState}
+        onClick={mint}
+      >
+        mint
       </button>
-      <button>See my progress</button>
+      <button className={styles.button}>see my progress</button>
     </div>
   )
 }
