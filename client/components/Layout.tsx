@@ -2,7 +2,6 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Layout.module.scss'
 import Menu from './Menu'
-import Metamask from './metamask/MetaMask'
 
 export default function Layout ({ children }: { children: any }) {
   return (
@@ -21,7 +20,6 @@ export default function Layout ({ children }: { children: any }) {
           ></link>
           <title>Proof of Meditation</title>
         </Head>
-        <Metamask />
 
         <div className={styles.page}>
           <div className={styles.left}>
