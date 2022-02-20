@@ -15,8 +15,8 @@ export default function Menu () {
         <Link href='/'>
           <a>home</a>
         </Link>
-        <Link href='/login'>
-          <a>login</a>
+        <Link href='/signup'>
+          <a>signup</a>
         </Link>
         <Link href='/meditating'>
           <a>meditating</a>

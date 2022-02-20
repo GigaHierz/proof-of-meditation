@@ -80,7 +80,9 @@ function MeditatingPage () {
       <span id='mycanvas' className={styles.status}>
         {status}
       </span>
-      {showart ? <img src='/pixels/1.png' alt='pxiel art' /> : null}
+      {showart ? (
+        <img className={styles.image} src='/pixels/1.png' alt='pxiel art' />
+      ) : null}
       <button
         className={styles.button}
         disabled={!startState || !stopState}

@@ -24,6 +24,12 @@
   width: 50%;
 }
 
+.list {
+  .left {
+    display: none;
+  }
+}
+
 .left {
   padding: 20px;
 }
