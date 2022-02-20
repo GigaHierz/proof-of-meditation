@@ -4,6 +4,8 @@ const data = require('../assets/data.json')
 
 const noOfPixel = 24 * 24
 
+// TODO add mod and then reduce array
+
 export const getFitbitData = async (
   startTime: string,
   stopTime: string
@@ -37,6 +39,7 @@ const toHex = (
   if (hexString.length !== 16) {
     return false
   }
+
   num = Math.abs(num)
   if (num && typeof num === 'number') {
     //recursively append the remainder to hex and divide num by 16
@@ -46,6 +49,15 @@ const toHex = (
       `${hexString[num % 16]}${hex}`
     )
   }
+
+  //  add colorscheme for range
+
+  // return blue for between 60 and 70
+  // red FF00
+  // yellow FFFF
+  // orange FFA5
+  // green 00FF
+  // blue 0000FF
   return '#' + '00' + '0f' + hex
 }
 

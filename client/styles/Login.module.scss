@@ -1,0 +1,17 @@
+.inputs {
+  display: flex;
+  flex-direction: column;
+  .input {
+    border: 0.5px solid #eaeaea;
+    height: 40px;
+    width: 200px;
+    margin: 5px;
+  }
+  .signup {
+    margin-top: 15px;
+    border: 0.5px solid #eaeaea;
+    background-color: #333333;
+    height: 45px;
+    width: 205px;
+  }
+}

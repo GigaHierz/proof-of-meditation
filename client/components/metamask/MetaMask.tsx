@@ -1,8 +1,9 @@
 import React from 'react'
 import { useWeb3React } from '@web3-react/core'
-import { Button, Badge, Space } from 'antd'
+import { Button, Space } from 'antd'
 import { WalletOutlined } from '@ant-design/icons'
 import { metamask } from './Connectors'
+import styles from '../../styles/MetaMask.module.scss'
 
 const Metamask = () => {
   const { active, chainId, account, activate, deactivate } = useWeb3React()
@@ -17,7 +18,7 @@ const Metamask = () => {
   }
 
   return (
-    <Space>
+    <Space className={styles.wallets}>
       <Button
         size='large'
         icon={<WalletOutlined />}

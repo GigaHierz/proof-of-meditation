@@ -15,6 +15,7 @@
 
 .left {
   display: none;
+  display: none;
 }
 .right {
   display: flex;
@@ -38,5 +39,11 @@
     flex-direction: column;
     align-items: center;
     width: 50%;
+  }
+
+  .list {
+    .left {
+      display: none;
+    }
   }
 }

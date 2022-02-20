@@ -2,11 +2,13 @@ import { useState } from 'react'
 import { getFitbitData } from '../services/fitbitService'
 import { createPixelArt } from '../services/imageService'
 import styles from '../styles/Meditating.module.scss'
+import Link from 'next/link'
 
 function MeditatingPage () {
   const [startState, setStartState] = useState<string>()
   const [stopState, setStopState] = useState<string>()
   const [status, setStatus] = useState<string>('')
+  const [showart, setShowart] = useState(false)
 
   const start = () => {
     if (!startState) {
@@ -54,6 +56,10 @@ function MeditatingPage () {
     setStopState(undefined)
   }
 
+  const showPixelArt = () => {
+    setShowart(true)
+  }
+
   return (
     <div className={styles.content}>
       {' '}
@@ -74,14 +80,19 @@ function MeditatingPage () {
       <span id='mycanvas' className={styles.status}>
         {status}
       </span>
+      {showart ? <img src='/pixels/1.png' alt='pxiel art' /> : null}
       <button
         className={styles.button}
         disabled={!startState || !stopState}
-        onClick={mint}
+        onClick={showPixelArt}
       >
         mint
       </button>
-      <button className={styles.button}>see my progress</button>
+      <div className={styles.link}>
+        <Link href='/list'>
+          <a>see my progress</a>
+        </Link>
+      </div>
     </div>
   )
 }
