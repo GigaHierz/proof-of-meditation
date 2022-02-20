@@ -15,7 +15,7 @@ async function main () {
 
   // We get the contract to deploy
   const Nft = await hre.ethers.getContractFactory('Nft')
-  const nft = await Nft.deploy('Hello, Hardhat!')
+  const nft = await Nft.deploy()
 
   await nft.deployed()
 
