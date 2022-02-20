@@ -1,4 +1,4 @@
-import HeartRate from '../models/fitbit'
+import HeartRate from '../models/fitbis'
 
 const data = require('../assets/data.json')
 

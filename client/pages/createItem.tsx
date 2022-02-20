@@ -1,4 +1,3 @@
-import { join } from 'path/win32'
 import { useEffect } from 'react'
 import { getFitbitData } from '../services/fitbitService'
 
