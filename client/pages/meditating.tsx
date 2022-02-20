@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { getFitbitData } from '../services/fitbitService'
-import { createPixelArt } from '../services/imageService'
 import styles from '../styles/Meditating.module.scss'
 import Link from 'next/link'
 
@@ -43,7 +42,6 @@ function MeditatingPage () {
     ) {
       getFitbitData(startState, stopState).then((colorArray: string[]) => {
         console.log(colorArray)
-        // const canvas = createPixelArt(colorArray)
         // const container = document.getElementById('mycanvas')
         // container.appendChild(canvas)
       })
