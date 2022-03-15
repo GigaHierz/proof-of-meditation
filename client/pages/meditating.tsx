@@ -15,7 +15,7 @@ function MeditatingPage () {
 
       setStartState(`${new Date().getHours()}:${new Date().getMinutes()}`)
       setStopState(undefined)
-      setStatus('Meditation is in Progress')
+      setStatus('meditation is in progress')
     }
   }
   const stop = () => {
@@ -82,7 +82,7 @@ function MeditatingPage () {
         <img className={styles.image} src='/pixels/1.png' alt='pxiel art' />
       ) : null}
       <button
-        className={styles.button}
+        className={styles.button_mint}
         disabled={!startState || !stopState}
         onClick={showPixelArt}
       >

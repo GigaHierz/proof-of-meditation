@@ -9,12 +9,22 @@
   padding: 5px;
 }
 
-.button:disabled {
+.button {
+  border-radius: 64%;
+  height: 50px;
+  width: 50px;
+
+  &:disabled {
+    background-color: #444;
+  }
+}
+.button_mint:disabled {
   background-color: #444;
 }
 
 .link {
   margin-top: 30px;
+  margin-bottom: 30px;
   a {
     margin: 8px 0;
     text-decoration: none;
