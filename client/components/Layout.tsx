@@ -33,6 +33,7 @@ export default function Layout ({ children }: { children: any }) {
             </div>
             <div className={styles.right}>
               <Menu></Menu>
+              <h1 className={styles.moto}>mental health is mental wealth</h1>
             </div>
           </div>
         </div>

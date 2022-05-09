@@ -33,7 +33,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50%;
+  width: 100%;
+
+  .moto {
+    text-align: center;
+  }
 }
 
 .list {
@@ -56,6 +60,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 50%;
+  }
+
+  .right {
     width: 50%;
   }
 
