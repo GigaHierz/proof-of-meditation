@@ -1,7 +1,8 @@
 .content {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 .status {
@@ -9,41 +10,61 @@
   padding: 5px;
 }
 
-.button {
-  border-radius: 64%;
-  height: 50px;
-  width: 50px;
+.meditation_buttons {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #fff;
+  .button {
+    border-radius: 64%;
+    height: 50px;
+    width: 50px;
 
-  &:disabled {
-    background-color: #444;
-  }
-}
-.button_mint:disabled {
-  background-color: #444;
-}
-
-.link {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  a {
-    margin: 8px 0;
-    text-decoration: none;
-    background: #333333;
-    font-size: 14px;
-    padding: 12px 16px;
-    letter-spacing: 0.025em;
-    color: white;
-    border: 0.1px solid #eaeaea;
-    transition: all 0.125s ease;
-
-    &:hover {
-      background-color: #eaeaea;
+    &:disabled {
+      background-color: #444;
     }
   }
 }
 
-.image {
-  border: 0.5px solid #eaeaea;
-  padding: 10px 10px 40px 10px;
+.mint_buttons {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 10px;
+  padding: 20px;
+  border: 1px solid #fff;
+  .button_mint:disabled {
+    background-color: #444;
+  }
+  .link {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    a {
+      margin: 8px 0;
+      text-decoration: none;
+      background: #333333;
+      font-size: 14px;
+      padding: 12px 16px;
+      letter-spacing: 0.025em;
+      color: white;
+      border: 0.1px solid #eaeaea;
+      transition: all 0.125s ease;
+
+      &:hover {
+        background-color: #eaeaea;
+      }
+    }
+  }
+
+  .image {
+    width: 150px;
+    border: 0.5px solid #eaeaea;
+    padding: 10px 10px 40px 10px;
+    margin: 10px;
+  }
 }

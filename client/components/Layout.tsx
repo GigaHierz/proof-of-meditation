@@ -22,19 +22,21 @@ export default function Layout ({ children }: { children: any }) {
         </Head>
 
         <div className={styles.page}>
-          <div className={styles.left}>
-            <Image
-              width={500}
-              height={790}
-              src='/ocean.jpeg'
-              alt='calm ocean'
-            />
-          </div>
-          <div className={styles.right}>
-            <Menu></Menu>
-            <main className={styles.main}>{children}</main>
+          <div className={styles.header}>
+            <div className={styles.left}>
+              <Image
+                width={400}
+                height={600}
+                src='/ocean.jpeg'
+                alt='calm ocean'
+              />
+            </div>
+            <div className={styles.right}>
+              <Menu></Menu>
+            </div>
           </div>
         </div>
+        <main className={styles.main}>{children}</main>
       </div>
     </>
   )

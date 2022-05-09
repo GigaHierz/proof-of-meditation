@@ -61,37 +61,42 @@ function MeditatingPage () {
   return (
     <div className={styles.content}>
       {' '}
-      <button
-        className={styles.button}
-        disabled={startState !== undefined}
-        onClick={start}
-      >
-        start
-      </button>
-      <button
-        className={styles.button}
-        disabled={stopState !== undefined && startState === undefined}
-        onClick={stop}
-      >
-        stop
-      </button>
-      <span id='mycanvas' className={styles.status}>
-        {status}
-      </span>
-      {showart ? (
-        <img className={styles.image} src='/pixels/1.png' alt='pxiel art' />
-      ) : null}
-      <button
-        className={styles.button_mint}
-        disabled={!startState || !stopState}
-        onClick={showPixelArt}
-      >
-        mint
-      </button>
-      <div className={styles.link}>
-        <Link href='/list'>
-          <a>see my progress</a>
-        </Link>
+      <div className={styles.meditation_buttons}>
+        <button
+          className={styles.button}
+          disabled={startState !== undefined}
+          onClick={start}
+        >
+          start
+        </button>
+        <button
+          className={styles.button}
+          disabled={stopState !== undefined && startState === undefined}
+          onClick={stop}
+        >
+          stop
+        </button>
+        <span id='mycanvas' className={styles.status}>
+          {status}
+        </span>
+      </div>
+      <div className={styles.mint_buttons}>
+        <button
+          className={styles.button_mint}
+          disabled={!startState || !stopState}
+          onClick={showPixelArt}
+        >
+          mint
+        </button>
+        <div className={styles.link}>
+          <Link href='/list'>
+            <a>my NFTs</a>
+          </Link>
+        </div>
+
+        {showart ? (
+          <img className={styles.image} src='/pixels/1.png' alt='pxiel art' />
+        ) : null}
       </div>
     </div>
   )
